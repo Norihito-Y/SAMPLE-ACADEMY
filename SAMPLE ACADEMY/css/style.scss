@@ -1,0 +1,302 @@
+// カラーの定義
+$primary: #82D5FF;
+$dark: #21252F;
+$body: #e4e4e4;
+$textarea: #ABABAB;
+
+// 影の定義
+$box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2); // フォントの定義
+$jp-font: 'Noto Sans JP', sans-serif;
+$en-font: 'Arial', sans-serif;
+
+// デフォルトのスタイル
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: $en-font;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: $jp-font;
+    font-weight: 700;
+}
+
+h5 {
+    font-weight: 700;
+}
+
+svg {
+    width: 17%;
+    height: 17%;
+    fill: #505050;
+}
+
+section {
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+// header
+.navbar-brand {
+    h2 {
+        font-family: "Sora", sans-serif;
+        font-weight: 400;
+    }
+}
+
+.nav-link {
+    font-family: $en-font;
+    font-weight: 700;
+}
+
+.btn {
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0;
+}
+
+.btn-gradient-blue {
+    background: linear-gradient(135deg, #0066cc 0%, #0099ff 50%, #00ccff 100%);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover {
+        background: linear-gradient(135deg, #0066cc 0%, #0099ff 50%, #00ccff 100%);
+        color: white;
+
+        &::before {
+            left: 100%;
+        }
+    }
+
+    &.btn-contact {
+        border-radius: 25px;
+        width: 30%;
+        margin: 0 auto;
+    }
+}
+
+// Hero section
+.hero {
+    background-image: url(../IMG/Hero.webp);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .btn {
+        font-weight: 300;
+    }
+}
+
+// Service section
+.card-effect {
+    box-shadow: $box-shadow;
+    padding: 7%;
+    transition: all 0.3s ease;
+    height: 100%;
+    background-color: #fff;
+
+    &:hover {
+        box-shadow: none;
+        transform: translateY(5px);
+
+        .icon-svg {
+            fill: #fff;
+        }
+    }
+
+    .icon-svg {
+        transition: fill 0.3s;
+
+        &:hover {
+            fill: #fff;
+        }
+    }
+}
+
+.service {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: 0;
+        background: linear-gradient(135deg, #0066cc 0%, #0099ff 50%, #00ccff 100%);
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #fff;
+
+        &::after {
+            opacity: 1;
+            top: 0;
+        }
+    }
+}
+
+// reskilling section
+.col-img {
+    background-image: url(../IMG/Section2-IMG.webp);
+    background-position: center;
+    background-size: cover;
+    min-height: 500px;
+}
+
+// graduate section
+.graduate {
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+// staff section
+#staff {
+    background-color: $body;
+
+    .staff {
+        img {
+            width: 125px;
+            height: 125px;
+            border-radius: 100px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                width: 34px;
+                height: 34px;
+                background-color: $primary;
+                border: solid 1px $primary;
+                color: #fff;
+                border-radius: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 4.5%;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: $primary;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    .card-effect {
+        background-color: #fff;
+    }
+}
+
+// Blog section
+#Blog {
+    background-color: $body;
+
+    .blog {
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .card-effect {
+        background-color: #fff;
+    }
+}
+
+// Contact section
+#Contact {
+    background-color: #fff;
+
+    form {
+
+        .form-control {
+            border: 2px solid #ababab;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: #0066cc;
+                box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+            }
+
+            &::placeholder {
+                color: #999999;
+                font-style: italic;
+            }
+        }
+
+        input.form-control {
+            height: 56px;
+            border-radius: 0px;
+        }
+
+        textarea.form-control {
+            border-radius: 0px;
+        }
+    }
+
+    .btn {
+        margin-top: 3%;
+        background-color: $primary;
+        color: #fff;
+    }
+}
+
+// Footer section
+#footer {
+    background-color: $dark;
+    color: #fff;
+    padding: 5%;
+
+    h2 {
+        font-family: "Sora", sans-serif;
+        font-weight: 400;
+    }
+
+    a {
+        color: #fff;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    li {
+        padding-left: 7%;
+    }
+}
